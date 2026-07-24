@@ -1,12 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Vijesha Choudhary | Portfolio</title>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;700&display=swap" rel="stylesheet">
+
 <style>
+
 *{
     margin:0;
     padding:0;
@@ -18,157 +25,264 @@ html{
 }
 
 body{
-    background:#f5f5f5;
-    font-family:Arial, Helvetica, sans-serif;
+    font-family:'Manrope',sans-serif;
+    background:#fff;
+    color:#111;
 }
 
-/* Header */
+/* ---------------- NAV ---------------- */
 
 header{
+
     position:fixed;
     top:0;
     left:0;
     width:100%;
-    background:rgba(255,255,255,0.96);
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:20px 60px;
+
+    background:rgba(255,255,255,.88);
     backdrop-filter:blur(12px);
-    box-shadow:0 2px 15px rgba(0,0,0,.08);
-    z-index:1000;
-    text-align:center;
-    padding:18px 20px;
+
+    transition:.35s ease;
+
+    z-index:999;
 }
 
-header h1{
-    font-size:2.2rem;
-    color:#222;
-    margin-bottom:6px;
+header.hide{
+    transform:translateY(-120%);
 }
 
-header p{
-    color:#666;
-    font-size:1.1rem;
+.logo{
+
+    line-height:1.2;
+
+}
+
+.logo h1{
+
+    font-size:32px;
+    font-weight:700;
+
+}
+
+.logo p{
+
+    margin-top:6px;
+    color:#777;
+    font-size:15px;
+
 }
 
 .download{
-    margin-top:15px;
-}
 
-.download a{
     text-decoration:none;
-    background:#2d6cdf;
+
+    color:#111;
+
+    border:1px solid #111;
+
+    padding:13px 24px;
+
+    transition:.3s;
+
+    letter-spacing:.5px;
+
+}
+
+.download:hover{
+
+    background:#111;
     color:white;
-    padding:12px 26px;
-    border-radius:8px;
-    transition:.25s;
-    font-size:16px;
+
 }
 
-.download a:hover{
-    background:#1b53b6;
-}
-
-/* Portfolio */
+/* ---------------- PORTFOLIO ---------------- */
 
 .portfolio{
-    margin-top:170px;
+
+    margin-top:95px;
+
 }
 
 .page{
+
     width:100%;
-    display:flex;
-    justify-content:center;
-    margin-bottom:40px;
+    overflow:hidden;
+
 }
 
 .page img{
-    width:min(100%,1200px);
-    height:auto;
+
+    width:100%;
     display:block;
-    box-shadow:0 10px 30px rgba(0,0,0,.15);
-    border-radius:6px;
+
+    opacity:0;
+
+    transform:translateY(50px);
+
+    transition:1s ease;
+
 }
 
-/* Mobile */
+/* fade animation */
+
+.page img.visible{
+
+    opacity:1;
+    transform:translateY(0);
+
+}
+
+/* ---------------- FOOTER ---------------- */
+
+footer{
+
+    text-align:center;
+
+    padding:70px;
+
+    color:#999;
+
+    font-size:14px;
+
+}
+
+/* ---------------- MOBILE ---------------- */
 
 @media(max-width:768px){
 
-header h1{
-    font-size:1.7rem;
+header{
+
+    padding:18px;
+
+    flex-direction:column;
+
+    gap:18px;
+
 }
 
-header p{
-    font-size:1rem;
+.logo{
+
+    text-align:center;
+
+}
+
+.logo h1{
+
+    font-size:24px;
+
+}
+
+.download{
+
+    width:100%;
+    text-align:center;
+
 }
 
 .portfolio{
-    margin-top:150px;
-}
 
-.page img{
-    width:100%;
-    border-radius:0;
-    box-shadow:none;
+    margin-top:160px;
+
 }
 
 }
+
 </style>
 
 </head>
+
 <body>
 
-<header>
+<header id="header">
+
+<div class="logo">
 
 <h1>Vijesha Choudhary</h1>
 
 <p>Architecture • Design • Creativity</p>
 
-<div class="download">
-<a href="portfolio.pdf" download>Download Portfolio PDF</a>
 </div>
+
+<a class="download" href="portfolio.pdf" download>
+
+Download Portfolio
+
+</a>
 
 </header>
 
+
 <div class="portfolio">
 
-<div class="page">
-<img src="portfolio-images-0.jpg" alt="Portfolio Page 1">
-</div>
-<div class="page">
-<img src="portfolio-images-1.jpg" alt="Portfolio Page 1">
-</div>
-
-<div class="page">
-<img src="portfolio-images-2.jpg" alt="Portfolio Page 2">
-</div>
-
-<div class="page">
-<img src="portfolio-images-3.jpg" alt="Portfolio Page 3">
-</div>
-
-<div class="page">
-<img src="portfolio-images-4.jpg" alt="Portfolio Page 4">
-</div>
-
-<div class="page">
-<img src="portfolio-images-5.jpg" alt="Portfolio Page 5">
-</div>
-
-<div class="page">
-<img src="portfolio-images-6.jpg" alt="Portfolio Page 6">
-</div>
-
-<div class="page">
-<img src="portfolio-images-7.jpg" alt="Portfolio Page 7">
-</div>
-
-<div class="page">
-<img src="portfolio-images-8.jpg" alt="Portfolio Page 8">
-</div>
-
-<div class="page">
-<img src="portfolio-images-9.jpg" alt="Portfolio Page 9">
-</div>
+<div class="page"><img src="portfolio-images-1.jpg"></div>
+<div class="page"><img src="portfolio-images-2.jpg"></div>
+<div class="page"><img src="portfolio-images-3.jpg"></div>
+<div class="page"><img src="portfolio-images-4.jpg"></div>
+<div class="page"><img src="portfolio-images-5.jpg"></div>
+<div class="page"><img src="portfolio-images-6.jpg"></div>
+<div class="page"><img src="portfolio-images-7.jpg"></div>
+<div class="page"><img src="portfolio-images-8.jpg"></div>
+<div class="page"><img src="portfolio-images-9.jpg"></div>
 
 </div>
+
+<footer>
+
+© 2026 Vijesha Choudhary
+
+</footer>
+
+<script>
+
+/* Fade-in animation */
+
+const observer=new IntersectionObserver((entries)=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("visible");
+
+}
+
+});
+
+},{threshold:.15});
+
+document.querySelectorAll(".page img").forEach(img=>observer.observe(img));
+
+/* Hide navbar while scrolling down */
+
+let lastScroll=0;
+
+const header=document.getElementById("header");
+
+window.addEventListener("scroll",()=>{
+
+const current=window.pageYOffset;
+
+if(current>lastScroll && current>120){
+
+header.classList.add("hide");
+
+}else{
+
+header.classList.remove("hide");
+
+}
+
+lastScroll=current;
+
+});
+
+</script>
 
 </body>
 </html>
